@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMVASH 6 | The Radiant Revolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --electric-blue: #2E5BFF;
+            --pink-pop: #FF1493;
+            --sunny-yellow: #FFD700;
+            --cyan-light: #00f2ff;
+            --dark-bg: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 2000;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--electric-blue);
+            font-weight: 900;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--pink-pop); }
+
+        /* --- SECTIONS --- */
+        .page-section { display: none; padding: 80px 20px; max-width: 1000px; margin: auto; text-align: center; }
+        #home-section { display: block; }
+
+        /* --- HERO --- */
+        header {
+            background-color: var(--electric-blue);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 10px solid var(--sunny-yellow);
+            border-radius: 0 0 50px 50px;
+        }
+
+        header h1 { font-size: 3.5rem; margin: 0; text-shadow: 4px 4px var(--pink-pop); }
+
+        /* --- VIDEO & CONTENT BOX --- */
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin-top: -40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 6px solid #eee;
+            background: black;
+            margin-bottom: 30px;
+        }
+        video { width: 100%; display: block; }
+
+        /* --- TIMELINE --- */
+        .timeline {
+            text-align: left;
+            border-left: 4px solid var(--electric-blue);
+            padding-left: 30px;
+            margin: 50px auto;
+            max-width: 600px;
+        }
+        .timeline-item { margin-bottom: 40px; position: relative; }
+        .timeline-item::before {
+            content: '';
+            position: absolute; width: 15px; height: 15px;
+            background: var(--pink-pop); left: -40px; top: 5px; border-radius: 50%;
+        }
+
+        /* --- FUN FACTS --- */
+        .fact-box {
+            background: var(--electric-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            transform: rotate(-1deg);
+        }
+
+        /* --- SQUAD & DREAMS --- */
+        .squad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .member-card {
+            background: white; border-radius: 20px; border: 3px solid var(--electric-blue);
+            padding: 25px; position: relative; transition: 0.4s;
+        }
+        .member-card:hover { transform: scale(1.05); border-color: var(--pink-pop); }
+        .dream-tag { background: #fffde7; color: #f57f17; font-size: 0.8rem; padding: 5px 10px; border-radius: 10px; display: inline-block; margin-top: 10px; font-weight: bold; }
+
+        /* --- AWARDS --- */
+        .awards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .award-card { background: white; border: 3px dashed var(--pink-pop); padding: 30px; border-radius: 25px; width: 280px; }
+
+        /* --- FOOTER --- */
+        footer { background: #222; color: white; padding: 60px 20px; margin-top: 100px; text-align: center; }
+        .confetti-btn {
+            background: var(--pink-pop); color: white; border: none; padding: 15px 35px; 
+            border-radius: 50px; font-weight: 900; cursor: pointer; font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a onclick="showSection('home-section')">BERANDA</a>
+    <a onclick="showSection('squad-section')">SQUAD & MIMPI</a>
+    <a onclick="showSection('award-section')">PENGHARGAAN</a>
+    <a onclick="showSection('gallery-section')">MEMORI</a>
+    <a onclick="showSection('message-section')">CONFESSION</a>
+</nav>
+
+<div id="home-section" class="page-section">
+    <header>
+        <h1>IMVASH 6</h1>
+        <p>⚡ THE RADIANT REVOLUTION ⚡</p>
+    </header>
+
+    <div class="content-card">
+        <h2>Welcome, Aldy! 👋</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="WhatsApp Video 2025-12-29 at 18.58.16.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <button class="confetti-btn" onclick="celebrate()">🎉 TEKAN UNTUK SELEBRASI!</button>
+
+        <div style="margin-top: 80px; font-style: italic; color: #555;">
+            <h2 style="color: var(--electric-blue); font-style: normal;">MESSAGE FROM MENTOR 🎓</h2>
+            <p>"Kalian adalah angkatan yang luar biasa. Teruslah bersinar seperti nama kalian, Radiant Revolution!"</p>
+            <p><strong>- Wali Kelas IMVASH 6</strong></p>
+        </div>
+
+        <div class="timeline">
+            <h2 style="color: var(--pink-pop); text-align: center; margin-bottom: 50px;">OUR JOURNEY ⏳</h2>
+            <div class="timeline-item">
+                <h3>THE BEGINNING (2023)</h3>
+                <p>Pertama kali kita berkumpul di sekolah ini. Masih malu-malu, masih mencari teman.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>SOLIDARITAS (2024)</h3>
+                <p>Momen lomba antar kelas dan acara angkatan yang membuat kita sadar bahwa kita adalah keluarga.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>THE RADIANT ERA (2025)</h3>
+                <p>Sekarang, kita berdiri sebagai angkatan yang paling kompak dan siap menaklukkan masa depan.</p>
+            </div>
+        </div>
+
+        <div class="fact-box">
+            <h3>IMVASH 6 FUN FACTS 🤔</h3>
+            <ul style="text-align: left; line-height: 1.8;">
+                <li>⚡ Angkatan yang paling sering "diskon" waktu istirahat.</li>
+                <li>⚡ Pecinta gorengan kantin garis keras.</li>
+                <li>⚡ Satu orang ketawa, satu kelas ikut ketawa (meski gak lucu).</li>
+                <li>⚡ Punya video sinematik paling keren (cek video di atas!).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="squad-section" class="page-section">
+    <h2 style="color: var(--electric-blue); font-size: 2.5rem;">41 HEROES & THEIR DREAMS</h2>
+    <p>Daftar orang-orang hebat dan mimpi besar mereka.</p>
+    <div class="squad-grid" id="member-container">
+        </div>
+</div>
+
+<div id="award-section" class="page-section">
+    <h2 style="color: var(--pink-pop); font-size: 2.5rem;">IMVASH AWARDS 🏆</h2>
+    <div class="awards-container">
+        <div class="award-card"><h3>🌟 The Most Radiant</h3><p>[Nama Teman]</p></div>
+        <div class="award-card"><h3>🤡 The Class Clown</h3><p>[Nama Teman]</p></div>
+        <div class="award-card"><h3>🔥 Si Paling Ambis</h3><p>[Nama Teman]</p></div>
+        <div class="award-card"><h3>😴 Si Paling Ngantuk</h3><p>[Nama Teman]</p></div>
+    </div>
+</div>
+
+<div id="gallery-section" class="page-section">
+    <h2 style="color: var(--pink-pop); font-size: 2.5rem;">TIME CAPSULE 📸</h2>
+    <p>Scroll untuk melihat kepingan memori kita.</p>
+    <div class="gallery-grid">
+        <div class="gallery-item">PHOTO 1</div><div class="gallery-item">PHOTO 2</div>
+        <div class="gallery-item">PHOTO 3</div><div class="gallery-item">PHOTO 4</div>
+        <div class="gallery-item">PHOTO 5</div><div class="gallery-item">PHOTO 6</div>
+    </div>
+</div>
+
+<div id="message-section" class="page-section">
+    <h2 style="color: var(--electric-blue); font-size: 2.5rem;">CONFESSION WALL</h2>
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfD_YOUR_FORM_ID/viewform?embedded=true" width="100%" height="800" frameborder="0">Memuat…</iframe>
+    </div>
+</div>
+
+<footer>
+    <p>Admin: aldy.akbar492@gmail.com</p>
+    <div style="margin: 20px 0;">
+        <a href="#" style="color:white; margin:10px;">INSTAGRAM</a> | <a href="#" style="color:white; margin:10px;">TIKTOK</a>
+    </div>
+    <p>© 2024 IMVASH 6 | Forever Blue 💙⚡</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.page-section');
+        sections.forEach(sec => sec.style.display = 'none');
+        document.getElementById(sectionId).style.display = 'block';
+        window.scrollTo(0,0);
+    }
+
+    function celebrate() {
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#2E5BFF', '#FF1493', '#FFD700'] });
+    }
+
+    // Generate 41 Member dengan "Mimpi" mereka
+    const container = document.getElementById('member-container');
+    const quotes = ["Revolution!", "Bersinar Bersama!", "To the Moon!", "Radiant Forever!"];
+    const dreams = ["Future CEO", "Professional Doctor", "Tech Innovator", "Creative Artist"];
+
+    for (let i = 1; i <= 41; i++) {
+        const card = document.createElement('div');
+        card.className = 'member-card';
+        card.innerHTML = `
+            <div class="member-no">#${i}</div>
+            <div class="photo-circle">PHOTO</div>
+            <h3>Member ${i}</h3>
+            <p>"${quotes[i % 4]}"</p>
+            <div class="dream-tag">🚀 Dream: ${dreams[i % 4]}</div>
+        `;
+        container.appendChild(card);
+    }
+</script>
+</body>
+</html>
